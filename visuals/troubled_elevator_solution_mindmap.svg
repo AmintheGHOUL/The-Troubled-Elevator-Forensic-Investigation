@@ -1,0 +1,166 @@
+<svg width="100%" viewBox="0 0 900 1380" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>DFRWS 2023 Troubled Elevator Improved Solution Mind Map</title>
+<desc>Improved structured SVG mind map summarizing the forensic solution for the DFRWS 2023 Troubled Elevator ICS challenge.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="rgb(240,153,123)"/>
+  </marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="rgb(93,202,165)"/>
+  </marker>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="rgb(0,0,0)" flood-opacity="0.30"/>
+  </filter>
+  <style>
+    .bg { fill: rgb(18, 19, 22); }
+    .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 31px; font-weight: 800; fill: rgb(255,255,255); text-anchor: middle; }
+    .subtitle { font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; fill: rgb(211,209,199); text-anchor: middle; }
+    .node { fill: rgb(35, 36, 39); stroke: rgb(240,153,123); stroke-width: 2; filter: url(#shadow); }
+    .node2 { fill: rgb(31, 40, 43); stroke: rgb(93,202,165); stroke-width: 2; filter: url(#shadow); }
+    .node3 { fill: rgb(36, 33, 51); stroke: rgb(175,169,236); stroke-width: 2; filter: url(#shadow); }
+    .center { fill: rgb(113,43,19); stroke: rgb(245,196,179); stroke-width: 3; filter: url(#shadow); }
+    .calloutG { fill: rgb(22,28,30); stroke: rgb(93,202,165); stroke-width: 2; filter: url(#shadow); }
+    .calloutO { fill: rgb(31,25,24); stroke: rgb(240,153,123); stroke-width: 2; filter: url(#shadow); }
+    .h { font-family: 'Segoe UI', Arial, sans-serif; font-size: 17px; font-weight: 800; fill: rgb(255,255,255); }
+    .h2 { font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; font-weight: 800; fill: rgb(255,255,255); }
+    .small { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; fill: rgb(234,232,222); }
+    .tiny { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; fill: rgb(196,194,184); }
+    .tag { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; font-weight: 800; fill: rgb(18,19,22); }
+    .line { fill: none; stroke: rgb(240,153,123); stroke-width: 2.2; marker-end: url(#arrow); opacity: .92; }
+    .lineG { fill: none; stroke: rgb(93,202,165); stroke-width: 2.2; marker-end: url(#arrowGreen); opacity: .92; }
+    .dash { fill: none; stroke: rgb(156,154,146); stroke-width: 1.5; stroke-dasharray: 7 7; opacity: .65; }
+    .pill-orange { fill: rgb(240,153,123); }
+    .pill-green { fill: rgb(93,202,165); }
+    .pill-purple { fill: rgb(175,169,236); }
+  </style>
+</defs>
+
+<rect class="bg" width="900" height="1380" rx="0"/>
+
+<text x="450" y="55" class="title">DFRWS 2023 — The Troubled Elevator</text>
+<text x="450" y="82" class="subtitle">Structured solution mind map: PCAP + PLC memory + desktop RAM + CCTV correlation</text>
+
+<!-- central -->
+<rect x="275" y="115" width="350" height="96" rx="24" class="center"/>
+<text x="450" y="148" class="h" text-anchor="middle">Core Finding</text>
+<text x="450" y="174" class="small" text-anchor="middle">Unauthorized PLC engineering activity</text>
+<text x="450" y="194" class="tiny" text-anchor="middle">Source: Employee-01 / DESKTOP-RSRBUGJ / 192.168.10.164</text>
+
+<!-- Evidence sources row -->
+<rect x="40" y="255" width="170" height="92" rx="18" class="node"/>
+<text x="125" y="285" class="h" text-anchor="middle">PCAP</text>
+<text x="58" y="312" class="small">• Modbus TCP / UMAS</text>
+<text x="58" y="332" class="small">• Four upload bursts</text>
+
+<rect x="255" y="255" width="180" height="92" rx="18" class="node2"/>
+<text x="345" y="285" class="h" text-anchor="middle">PLC Memory</text>
+<text x="273" y="312" class="small">• ExtRAM ZIP/XML</text>
+<text x="273" y="332" class="small">• OnChipRAM state</text>
+
+<rect x="475" y="255" width="180" height="92" rx="18" class="node3"/>
+<text x="565" y="285" class="h" text-anchor="middle">Desktop RAM</text>
+<text x="493" y="312" class="small">• Victim machine</text>
+<text x="493" y="332" class="small">• USB lead / limits</text>
+
+<rect x="695" y="255" width="165" height="92" rx="18" class="node"/>
+<text x="777" y="285" class="h" text-anchor="middle">CCTV</text>
+<text x="713" y="312" class="small">• Physical impact</text>
+<text x="713" y="332" class="small">• Timeline support</text>
+
+<path d="M450 211 C450 230 125 230 125 253" class="line"/>
+<path d="M450 211 C450 230 345 230 345 253" class="lineG"/>
+<path d="M450 211 C450 230 565 230 565 253" class="line"/>
+<path d="M450 211 C450 230 777 230 777 253" class="lineG"/>
+
+<!-- Flow spine -->
+<path d="M450 375 L450 1090" class="dash"/>
+
+<!-- step nodes alternating -->
+<rect x="70" y="395" width="340" height="120" rx="20" class="node"/>
+<rect x="92" y="412" width="74" height="26" rx="13" class="pill-orange"/>
+<text x="129" y="430" class="tag" text-anchor="middle">STEP 1</text>
+<text x="92" y="462" class="h">Network Baseline</text>
+<text x="92" y="488" class="small">• PLC: 192.168.10.45</text>
+<text x="92" y="508" class="small">• Expected: HMI + Engineering WS</text>
+<path d="M410 455 L447 455" class="line"/>
+
+<rect x="490" y="395" width="340" height="120" rx="20" class="node2"/>
+<rect x="512" y="412" width="74" height="26" rx="13" class="pill-green"/>
+<text x="549" y="430" class="tag" text-anchor="middle">STEP 2</text>
+<text x="512" y="462" class="h">Find Unauthorized Host</text>
+<text x="512" y="488" class="small">• Employee-01 talked to PLC</text>
+<text x="512" y="508" class="small">• Discovery + UMAS sessions</text>
+<path d="M490 455 L453 455" class="lineG"/>
+
+<rect x="70" y="550" width="340" height="140" rx="20" class="node3"/>
+<rect x="92" y="567" width="74" height="26" rx="13" class="pill-purple"/>
+<text x="129" y="585" class="tag" text-anchor="middle">STEP 3</text>
+<text x="92" y="617" class="h">Confirm PLC Program Uploads</text>
+<text x="92" y="643" class="small">• 14:27 Upload #1</text>
+<text x="92" y="663" class="small">• 15:00 Upload #2</text>
+<text x="92" y="683" class="small">• 15:25 Upload #3 / victim impact</text>
+<path d="M410 620 L447 620" class="line"/>
+
+<rect x="490" y="550" width="340" height="140" rx="20" class="node"/>
+<rect x="512" y="567" width="74" height="26" rx="13" class="pill-orange"/>
+<text x="549" y="585" class="tag" text-anchor="middle">STEP 4</text>
+<text x="512" y="617" class="h">Extract PLC Project</text>
+<text x="512" y="643" class="small">• ExtRAM ZIP at approx. 0xD00B</text>
+<text x="512" y="663" class="small">• Carve ZIP → entry XML</text>
+<text x="512" y="683" class="small">• Diff logic across snapshots</text>
+<path d="M490 620 L453 620" class="lineG"/>
+
+<rect x="70" y="725" width="340" height="165" rx="20" class="node2"/>
+<rect x="92" y="742" width="74" height="26" rx="13" class="pill-green"/>
+<text x="129" y="760" class="tag" text-anchor="middle">STEP 5</text>
+<text x="92" y="792" class="h">Identify Logic Changes</text>
+<text x="92" y="818" class="small">• SAME_CALL removed</text>
+<text x="92" y="838" class="small">• Timer: 10s → 5000ms = 5s</text>
+<text x="92" y="858" class="small">• Door safety rung deleted</text>
+<text x="92" y="878" class="small">• 0x5D419: 0x8B → 0x88</text>
+<path d="M410 808 L447 808" class="line"/>
+
+<rect x="490" y="725" width="340" height="165" rx="20" class="node3"/>
+<rect x="512" y="742" width="74" height="26" rx="13" class="pill-purple"/>
+<text x="549" y="760" class="tag" text-anchor="middle">STEP 6</text>
+<text x="512" y="792" class="h">Correlate With Physical Evidence</text>
+<text x="512" y="818" class="small">• CCTV: stuck / unsafe door behavior</text>
+<text x="512" y="838" class="small">• Upload #3 aligns with victim event</text>
+<text x="512" y="858" class="small">• Final state leaves elevator sealed</text>
+<text x="512" y="878" class="small">• Human safety impact confirmed</text>
+<path d="M490 808 L453 808" class="lineG"/>
+
+<!-- final conclusion -->
+<rect x="275" y="930" width="350" height="132" rx="20" class="node2"/>
+<rect x="300" y="948" width="80" height="26" rx="13" class="pill-green"/>
+<text x="340" y="966" class="tag" text-anchor="middle">FINAL</text>
+<text x="300" y="998" class="h">Final Conclusion</text>
+<text x="300" y="1023" class="small">• Attack source: DESKTOP-RSRBUGJ</text>
+<text x="300" y="1043" class="small">• No PCAP evidence of remote control</text>
+<text x="300" y="1063" class="small">• Local interactive use best-supported</text>
+<path d="M450 930 L450 890" class="lineG"/>
+
+<!-- bottom callouts, separated from footer -->
+<rect x="60" y="1110" width="330" height="112" rx="18" class="calloutG"/>
+<text x="85" y="1142" class="h2">Key Evidence Chain</text>
+<text x="85" y="1170" class="tiny">PCAP uploads → ExtRAM project diffs</text>
+<text x="85" y="1190" class="tiny">→ PLC logic changes → CCTV behavior</text>
+<text x="85" y="1210" class="tiny">Builds a cross-artifact timeline</text>
+
+<rect x="510" y="1110" width="330" height="112" rx="18" class="calloutO"/>
+<text x="535" y="1142" class="h2">Main Limitation</text>
+<text x="535" y="1170" class="tiny">Evidence identifies the workstation,</text>
+<text x="535" y="1190" class="tiny">not the human operator.</text>
+<text x="535" y="1210" class="tiny">Needs host logs / access records.</text>
+
+<path d="M450 1065 L450 1100" class="line"/>
+<path d="M450 1100 C420 1100 390 1120 390 1165" class="lineG"/>
+<path d="M450 1100 C480 1100 510 1120 510 1165" class="line"/>
+
+<!-- response footer -->
+<rect x="90" y="1260" width="720" height="82" rx="22" class="center"/>
+<text x="450" y="1290" class="h" text-anchor="middle">Response + Prevention</text>
+<text x="450" y="1316" class="small" text-anchor="middle">Prioritize safety • Preserve evidence • Restore known-good PLC logic</text>
+<text x="450" y="1336" class="tiny" text-anchor="middle">Restrict engineering access • Monitor UMAS/Modbus commands • Maintain PLC backups</text>
+<path d="M450 1225 L450 1258" class="line"/>
+</svg>
