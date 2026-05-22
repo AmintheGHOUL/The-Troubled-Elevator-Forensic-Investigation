@@ -2,8 +2,7 @@
 
 **Challenge:** DFRWS 2023 — The Troubled Elevator  
 **Source:** https://github.com/dfrws/dfrws2023-challenge  
-**Domain:** ICS/SCADA Forensics — PLC Memory, Network Traffic, Desktop Memory  
-**Author:** VCU SAFE Lab (Security and Forensics Engineering Laboratory)  
+**Domain:** ICS/SCADA Forensics — PLC Memory, Network Traffic, Desktop Memory   
 **Tools:** Wireshark/tshark, Volatility 3, binwalk, 7-Zip, Python 3, cmp/xxd/strings
 
 ---
